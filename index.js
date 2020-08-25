@@ -1,10 +1,15 @@
 function findMinAndRemoveSorted(array){
+<<<<<<< HEAD
   //return array.splice(0,1)
   return array.shift();
+=======
+  return array.splice(0,1)
+>>>>>>> 65fc0fd814cc28f45f0e9a3f4490b43382849679
 }
 
 function merge(firstSubArray, secondSubArray){
   let sorted = [];
+<<<<<<< HEAD
   while(firstSubArray.length !== 0 && secondSubArray.length !== 0){
     if(firstSubArray[0] < secondSubArray[0]){
       sorted.push(findMinAndRemoveSorted(firstSubArray));
@@ -25,4 +30,16 @@ function mergeSort(array){
     }else{
       return array
     }
+=======
+  while(firstSubArray !== 0 && secondSubArray !== 0){
+    if(firstSubArray[0] < secondSubArray[0]){
+      sorted.push(findMinAndRemoveSorted(firstSubArray));
+      merge(firstSubArray, secondSubArray)
+    } else if(secondSubArray[0] < firstSubArray[0]){
+      sorted.push(findMinAndRemoveSorted(secondSubArray));
+      merge(firstSubArray, secondSubArray)
+    }
+  }
+  return sorted.concat(firstSubArray).concat(secondSubArray)
+>>>>>>> 65fc0fd814cc28f45f0e9a3f4490b43382849679
 }
